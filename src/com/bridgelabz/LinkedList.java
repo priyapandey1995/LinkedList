@@ -5,6 +5,15 @@ public class LinkedList<T> {
 	private Node<T> head;
 	private Node<T> tail;
 	
+	/**
+	 * 
+	 * @param data t
+	 * firstly the new node is created
+	 * then,check whether the head is == null
+	 * if its null,then both head and tail will point to a new node
+	 * 
+	 */
+	
 	public void toInsertData(T data)
 	{
 		//to create a new node
@@ -18,10 +27,26 @@ public class LinkedList<T> {
 			tail = node;
 		}
 		else {
-			
+			//node will be add after the tail
 			tail.next = node;
 		//node will become the new tail of the list
 			tail = node;
+		}
+	}
+	
+	//to append
+	public void toAppend(int data) {
+		Node node = new Node(data);
+		
+		if(head == null) {
+			head = node;
+			tail = node;
+		}
+		else {
+		//here,node will be added after the tail,and so hence the tail next will point to node
+			tail.next = node;
+			tail = node;//new tail will be added in the list
+			
 		}
 	}
 	
@@ -33,9 +58,11 @@ public class LinkedList<T> {
 			System.out.println("List is empty");
 		}
 		while(current != null) {
-			System.out.println(current.data);
+			System.out.print(current.data + "==>");
 			current = current.next;
 		}
 	}
+	
+	
 	
 }
