@@ -14,7 +14,8 @@ public class LinkedListMain {
 		//list.toAddInBetween(1, 30);
 		//System.out.println();
 		//list.toDisplay();
-		list.toDeleteAtFirstElement();
+		//list.toDeleteAtFirstElement();
+		list.toDeleteLastElement();
 		
 		
 		list.toDisplay();

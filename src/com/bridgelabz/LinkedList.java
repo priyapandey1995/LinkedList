@@ -99,6 +99,22 @@ public class LinkedList<T> {
 				}
 				
 			}
+		 
+		 public void toDeleteLastElement() {
+			 if(head == null) {
+				 System.out.println("Linked list is empty");
+			 }else {
+				 Node <T> currentPos =head;
+				 if(head.next == null) {
+					 head = null;
+					 return;
+				 }
+				 while(currentPos.next.next != null) {
+					 currentPos = currentPos.next;
+				 }
+				 currentPos.next = null;
+			 }
+		 }
 	
 	
 	public void toDisplay() {
