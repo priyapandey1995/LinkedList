@@ -7,9 +7,9 @@ public class LinkedListMain {
 		LinkedList list = new LinkedList();
 		
 		//to add the nodes to the list
-		list.toInsertData(70);
-		list.toInsertData(30);
 		list.toInsertData(56);
+		list.toInsertData(30);
+		list.toInsertData(70);
 		
 		list.toDisplay();
 	}
