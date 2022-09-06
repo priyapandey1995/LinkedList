@@ -89,16 +89,16 @@ public class LinkedList<T> {
 			 }
 
 		 
-		public void toDeleteAtFirstElement() {
-			
-			if(head == null) {
-				System.out.println("List is empty!nothing to delete");
+		 public void toDeleteAtFirstElement() {
+				
+				if(head == null) {
+					System.out.println("List is empty!nothing to delete");
+				}
+				else {
+					head = head.next;
+				}
+				
 			}
-			else {
-				head = head.next;
-			}
-			
-		}
 	
 	
 	public void toDisplay() {
