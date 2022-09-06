@@ -2,8 +2,8 @@ package com.bridgelabz;
 
 public class LinkedList<T> {
 	//private T size;
-	private Node<T> head;
-	private Node<T> tail;
+	 Node <T> head;
+	 Node <T> tail;
 	
 	/**
 	 * 
@@ -34,21 +34,63 @@ public class LinkedList<T> {
 		}
 	}
 	
-	//to append
-	public void toAppend(int data) {
-		Node node = new Node(data);
-		
-		if(head == null) {
-			head = node;
-			tail = node;
-		}
-		else {
-		//here,node will be added after the tail,and so hence the tail next will point to node
-			tail.next = node;
-			tail = node;//new tail will be added in the list
-			
-		}
+	public void toAddNodeAtFirst(T data) {
+		 Node<T> newNode = new Node <T>(data);
+		 
+		 if(head == null) {
+			 head = newNode;
+			 newNode.next = null;
+		 }else {
+			 Node <T> temp = head;
+			 head = newNode;
+			 newNode.next = temp;
+		 }
 	}
+		 
+		 public void addNodeAtLast(T data) {
+			 Node <T> newNode = new Node <T>(data);
+			 if(head == null) {
+				 head = newNode;
+				 tail = newNode;
+				 newNode.next = null;
+				 
+			 }else {
+				 tail.next = newNode;
+				 newNode.next = null;
+				 tail = tail.next;
+			 }
+		 }
+		 
+		 public void toAddInBetween(int index, T data) {
+			 
+			 Node <T> newNode =new Node <T>(data);
+			 newNode.next = null;
+			 
+			 if(index == 0) {
+				 toAddNodeAtFirst(data);
+			 }
+			 
+				 else {
+					 Node <T> currentPos = head;
+					 Node <T> prevPos = head;
+					 for(int i = 0;i< index;i++) {
+						 prevPos = currentPos;
+						 currentPos = currentPos.next;
+						 if(currentPos == null) {
+							 addNodeAtLast(data);
+							 return;
+						 }
+						 
+					 }
+					 Node <T> temp = prevPos.next;
+					 prevPos.next = newNode;
+					 newNode.next = temp;
+				 }
+			 }
+
+		 
+				 	
+	
 	
 	public void toDisplay() {
 		
@@ -64,5 +106,5 @@ public class LinkedList<T> {
 	}
 	
 	
-	
+		 	
 }
